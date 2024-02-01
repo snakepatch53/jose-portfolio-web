@@ -1,4 +1,3 @@
-import React from "react";
 import WorkCard from "../chip/WorkCard";
 
 export default function SectionWorks({ info }) {

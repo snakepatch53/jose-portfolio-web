@@ -1,8 +1,3 @@
-import React from "react";
-import { FaTelegramPlane } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { RiInstagramFill } from "react-icons/ri";
-
 export default function SectionFooter({ info }) {
     const { ideasoft_link, social } = info;
     return (

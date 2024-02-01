@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function SectionResume({ info }) {
     const { experience } = info;
     const { education } = info;

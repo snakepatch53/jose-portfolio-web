@@ -1,4 +1,3 @@
-import React from "react";
 import { FiDownload } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
