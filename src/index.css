@@ -1,57 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-family: 'Josefin Sans', sans-serif;
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
 }
+
 html {
-  overflow-x: hidden !important;
-  scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 }
+
+body {
+    background: var(--c1-bg);
+    color: var(--c1-txt);
+}
+
+:root {
+    --p: 50px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
-  scrollbar-color: white;
+    width: 7px;
+    scrollbar-color: white;
 }
 ::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px;
+    background: black;
+    border-radius: 10px;
 }
 
 ::selection {
-  color: white;
-  background: #000;
+    color: white;
+    background: #000;
 }
 
-
-
-
 /* Hero circular spin */
-.circle-text{
-  -webkit-animation: spin 12s linear infinite;
-  animation: spin 12s linear infinite;
+.circle-text {
+    -webkit-animation: spin 12s linear infinite;
+    animation: spin 12s linear infinite;
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --p: 20px;
+    }
 }

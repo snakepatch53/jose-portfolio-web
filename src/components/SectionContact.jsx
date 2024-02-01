@@ -1,8 +1,17 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { RiSendPlaneFill } from "react-icons/ri";
 
-const Contact = () => {
+export default function SectionContact({ info }) {
+    const { whatsapp } = info;
+    const [name, setName] = useState("");
+    const [message, setMessage] = useState("");
+    const [link, setLink] = useState("");
+    useEffect(() => {
+        setLink(
+            `https://api.whatsapp.com/send/?phone=${whatsapp}&text=Hola%2C+mi+nombre+es+%2A${name}%2A.+Te+contacto+por%3A+${message}`
+        );
+    }, [name, message]);
     return (
         <div id="contact" className="container m-auto mt-16">
             {/* heading */}
@@ -10,7 +19,7 @@ const Contact = () => {
                 // data-aos="fade-up"
                 className="relative mb-5"
             >
-                <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">Contact</h3>
+                <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">Contáctame</h3>
                 <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
             </div>
 
@@ -19,16 +28,16 @@ const Contact = () => {
                 <div className="left w-[70%] flex-1 flex items-center justify-center sm:flex-col sm:w-full">
                     <div className="flex-3 w-1/2 gap-3 flex items-end justify-end  flex-col sm:w-3/4">
                         <div data-aos="zoom-in">
-                            <h1 className="text-5xl font-bold sm:text-3xl">You Need</h1>
+                            <h1 className="text-5xl font-bold sm:text-3xl">Necesitas</h1>
                             <h3 className="text-xl sm:text-lg">
-                                Beautiful design for your website leave a request
+                                Hermoso diseño para tu sitio web deja una solicitud
                             </h3>
                         </div>
                     </div>
                     <div className=" flex p-5 items-center justify-center ">
                         <button
                             data-aos="zoom-in"
-                            className=" text-yellow-500 font-extrabold text-3xl p-2 rounded-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] "
+                            className=" text-[var(--c1-txt3)] font-extrabold text-3xl p-2 rounded-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] "
                         >
                             <BsArrowRight className=" md:rotate-90" />
                         </button>
@@ -41,37 +50,32 @@ const Contact = () => {
                         action="mailto:xyz@gmail.com"
                     >
                         <input
-                            className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
-                            type="email"
-                            placeholder="e.g. example@email.com"
-                            name=""
-                        />
-                        <input
-                            className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
+                            className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full text-[var(--c3-txt)]"
                             type="text"
-                            placeholder="e.g. John Doe"
-                            name=""
+                            placeholder="Nombre: Ejm. John Doe"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                         />
                         <textarea
-                            className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
+                            className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full text-[var(--c3-txt)]"
                             rows="4"
                             cols="50"
-                            placeholder="Write your message"
-                            name=""
-                            id=""
+                            placeholder="Escribe tu mensaje.."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                         />
-                        <button
-                            className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
-                            type="submit"
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-[var(--c4-bg)] w-full text-[var(--c3-txt)] font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
                         >
-                            <span>Send</span>
+                            <span>Enviar</span>
                             <RiSendPlaneFill />
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>
         </div>
     );
-};
-
-export default Contact;
+}

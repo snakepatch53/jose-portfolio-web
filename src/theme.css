@@ -1,0 +1,25 @@
+:root {
+    --c1-bg: #12151d;
+    --c1-txt: #e1e1e1;
+    --c1-txt2: #818181;
+    --c1-txt3: #54baa8;
+
+    --c2-bg: #020202;
+    --c2-txt: #e1e1e1;
+    --c2-txt2: #97f8e6;
+
+    --c3-bg: #f7f7ff;
+    --c3-txt: #000926;
+    --c3-txt2: #54baa8;
+
+    --c4-bg: #54baa8;
+    --c4-txt: #f7f7ff;
+
+    --c5-bg: linear-gradient(to right, #12151d, #020202);
+    --c5-txt: #f7f7ff;
+    --c5-txt2: #34b69e;
+
+    --c6-bg: #0f12198e;
+    --c6-txt: #f7f7ff;
+    --c6-txt2: #25af96;
+}

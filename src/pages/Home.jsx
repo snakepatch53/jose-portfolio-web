@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import NavBar from "../components/NavBar";
-import Resume from "../components/Resume";
-import Skills from "../components/Skills";
-import Work from "../components/Work";
+import { useState } from "react";
 import info from "../../data.json";
+import SectionNavBar from "../components/SectionNavBar";
+import SectionHero from "../components/SectionHero";
+import SectionSkills from "../components/SectionSkills";
+import SectionWorks from "../components/SectionWorks";
+import SectionResume from "../components/SectionResume";
+import SectionContact from "../components/SectionContact";
+import SectionFooter from "../components/SectionFooter";
 
 const Home = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -15,13 +15,13 @@ const Home = () => {
     }
     return (
         <>
-            <NavBar info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            <Hero info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            <Skills info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            <Work info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            <Resume info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            <Contact info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            <Footer info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionNavBar info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionHero info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionSkills info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionWorks info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionResume info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionContact info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <SectionFooter info={info} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </>
     );
 };
